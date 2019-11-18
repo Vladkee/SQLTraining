@@ -1,3 +1,3 @@
 ﻿//
-// Tasks 1-10 are added to rep.
+// HR tasks 22-50 are added to rep.
 //
