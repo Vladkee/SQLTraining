@@ -1,0 +1,99 @@
+﻿<Window x:Class="ShopApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShopApp"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="450" 
+        Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="12*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="15*"></RowDefinition>
+            <RowDefinition Height="25*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="42*"></RowDefinition>
+            <RowDefinition Height="41*"></RowDefinition>
+            <RowDefinition Height="12*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
+            <ColumnDefinition Width="250*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="120*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="120*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="120*"></ColumnDefinition>
+            <ColumnDefinition Width="20*"></ColumnDefinition>
+            <ColumnDefinition Width="7*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.ColumnSpan="8" 
+                  Grid.Column="1" 
+                  Grid.Row="5" 
+                  Grid.RowSpan="7" 
+                  Margin="0,0,2,0" 
+                  Name="myDataGrid" 
+                  IsReadOnly="True" 
+                  MouseDoubleClick="MyDataGrid_MouseDoubleClick" 
+                  AutoGenerateColumns="False">
+        <DataGrid.Columns>
+            <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding ProductID}"
+                        Header="ProductID" />
+
+            <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding ItemName}"
+                        Header="ItemName" />
+
+            <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Price}"
+                        Header="Price" />
+
+            <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Quantity}"
+                        Header="Quantity" />
+        </DataGrid.Columns>
+        </DataGrid>
+        <TextBox Grid.Column="1" 
+                 Grid.Row="1" 
+                 TextWrapping="Wrap" 
+                 Grid.RowSpan="2" 
+                 ToolTip="Enter text here" 
+                 Name ="myTextBox" 
+                 Text="Enter data here separated with ','" 
+                 GotMouseCapture="MyTextBox_GotMouseCapture"/>
+        <Button Content="Add"
+                Grid.Column="5" 
+                Grid.Row="1" 
+                Click="Add_Button"/>
+        <Button Content="Remove"
+                Grid.Column="7"
+                Grid.Row="1" 
+                Click="Remove_Button" 
+                Grid.ColumnSpan="2" 
+                Margin="0,0,22,0"/>
+        <Button Content="Clear"
+                Grid.Column="7"
+                Margin="0,0,22,0"
+                Grid.Row="3"
+                Click="Clear_Button"
+                Grid.ColumnSpan="2"/>
+        <Button Content="Save" 
+                Grid.Column="5" 
+                Grid.Row="3" 
+                Click="Save_Button"/>
+    </Grid>
+</Window>
